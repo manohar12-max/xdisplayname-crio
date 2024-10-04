@@ -8,9 +8,6 @@ export default function App() {
     const handleSubmit = (e) => {
     setDisplay("");
     e.preventDefault();
-    if (!firstName || !lastName) {
-      return;
-    }
     setDisplay(`${firstName} ${lastName}`);
   };
 
