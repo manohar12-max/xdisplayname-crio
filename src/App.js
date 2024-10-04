@@ -2,18 +2,14 @@ import { useEffect, useState } from "react";
 import "./styles.css";
 
 export default function App() {
-  const [data, setData] = useState({
-    name: "",
-    surname: "",
-  });
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [display, setDisplay] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
-    setDisplay(data);
-    setData({
-      name: "",
-      surname: "",
-    });
+    setDisplay(`${firstName} ${lastName}`);
+    setFirstName("");
+    setLastName("");
   };
   useEffect(() => {}, []);
   return (
@@ -26,11 +22,9 @@ export default function App() {
             type="text"
             required
             onChange={(e) => {
-              setData((data) => {
-                return { ...data, name: e.target.value };
-              });
+              setFirstName(e.target.value);
             }}
-            value={data.name}
+            value={firstName}
             placeholder="Enter your name"
           />
         </div>
@@ -40,34 +34,16 @@ export default function App() {
             type="text"
             required
             onChange={(e) => {
-              setData((data) => {
-                return { ...data, surname: e.target.value };
-              });
+              setLastName(e.target.value);
             }}
-            value={data.surname}
+            value={lastName}
             placeholder="Enter your name"
           />
         </div>
         <button type="submit">Submit</button>
       </form>
       <div className="display">
-        {display && (
-          <div className="">
-            Full Name: {display.name} {display.surname}
-            <button
-              onClick={() => {
-                setDisplay("");
-              }}
-              style={{
-                border: "none",
-                backgroundColor: "white",
-                cursor: "pointer",
-              }}
-            >
-              x
-            </button>
-          </div>
-        )}
+        {display && <div className="">Full Name: {display}</div>}
       </div>
     </div>
   );
