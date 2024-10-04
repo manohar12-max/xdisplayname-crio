@@ -8,8 +8,6 @@ export default function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setDisplay(`${firstName} ${lastName}`);
-    setFirstName("");
-    setLastName("");
   };
   useEffect(() => {}, []);
   return (
