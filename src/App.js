@@ -5,7 +5,7 @@ export default function App() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [display, setDisplay] = useState("");
-  const handleSubmit = (e) => {
+  const submit = (e) => {
     e.preventDefault();
     setDisplay(firstName + " " + lastName);
   };
@@ -13,11 +13,11 @@ export default function App() {
   return (
     <div className="App">
       <h1>Full Name Display</h1>
-      <form action="" onSubmit={handleSubmit}>
+      <form action="" onSubmit={submit}>
         <div className="">
           <label htmlFor="">First Name: </label>
           <input
-            name="firstName"
+            name="fname"
             required
             type="text"
             onChange={(e) => {
@@ -30,7 +30,7 @@ export default function App() {
         <div className="">
           <label htmlFor="">Last Name: </label>
           <input
-            name="lastName"
+            name="lname"
             required
             type="text"
             onChange={(e) => {
