@@ -42,7 +42,7 @@ export default function App() {
         <button type="submit">Submit</button>
       </form>
       <div className="display">
-        {display && firstName && lastName && (
+        {display  && (
           <div className="">Full Name: {display}</div>
         )}
       </div>
