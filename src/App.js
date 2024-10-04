@@ -6,9 +6,11 @@ export default function App() {
   const [lastName, setLastName] = useState("");
   const [display, setDisplay] = useState("");
   const handleSubmit = (e) => {
+    setDisplay("");
     e.preventDefault();
     if (!firstName || !lastName) {
-      setDisplay("");
+      return;
+    }
       return;
     }
     setDisplay(`${firstName} ${lastName}`);
