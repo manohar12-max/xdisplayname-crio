@@ -6,10 +6,11 @@ export default function App() {
   const [lastName, setLastName] = useState("");
   const [display, setDisplay] = useState("");
   const handleSubmit = (e) => {
+    console.log(firstName, lastName);
     e.preventDefault();
     setDisplay(`${firstName} ${lastName}`);
   };
-  useEffect(() => {}, []);
+
   return (
     <div className="App">
       <h1>Full Name Display</h1>
@@ -41,7 +42,9 @@ export default function App() {
         <button type="submit">Submit</button>
       </form>
       <div className="display">
-        {display && <div className="">Full Name: {display}</div>}
+        {display && firstName && lastName && (
+          <div className="">Full Name: {display}</div>
+        )}
       </div>
     </div>
   );
