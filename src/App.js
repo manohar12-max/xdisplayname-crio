@@ -6,8 +6,11 @@ export default function App() {
   const [lastName, setLastName] = useState("");
   const [display, setDisplay] = useState("");
   const handleSubmit = (e) => {
-    console.log(firstName, lastName);
     e.preventDefault();
+    if (!firstName || !lastName) {
+      setDisplay("");
+      return;
+    }
     setDisplay(`${firstName} ${lastName}`);
   };
 
@@ -19,9 +22,7 @@ export default function App() {
           <label htmlFor="">First Name: </label>
           <input
             type="text"
-            required
             onChange={(e) => {
-              setDisplay("");
               setFirstName(e.target.value);
             }}
             value={firstName}
@@ -32,9 +33,7 @@ export default function App() {
           <label htmlFor="">Last Name: </label>
           <input
             type="text"
-            required
             onChange={(e) => {
-              setDisplay("");
               setLastName(e.target.value);
             }}
             value={lastName}
@@ -44,9 +43,7 @@ export default function App() {
         <button type="submit">Submit</button>
       </form>
       <div className="display">
-        {display  && (
-          <div className="">Full Name: {display}</div>
-        )}
+        {display && <div className="">Full Name: {display}</div>}
       </div>
     </div>
   );
