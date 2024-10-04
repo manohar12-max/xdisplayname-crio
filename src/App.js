@@ -53,7 +53,7 @@ export default function App() {
       <div className="display">
         {display && (
           <div className="">
-            Full Name:{display.name} {display.surname}
+            Full Name: {display.name} {display.surname}
             <button
               onClick={() => {
                 setDisplay("");
