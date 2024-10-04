@@ -21,6 +21,7 @@ export default function App() {
             type="text"
             required
             onChange={(e) => {
+              setDisplay("");
               setFirstName(e.target.value);
             }}
             value={firstName}
@@ -33,6 +34,7 @@ export default function App() {
             type="text"
             required
             onChange={(e) => {
+              setDisplay("");
               setLastName(e.target.value);
             }}
             value={lastName}
