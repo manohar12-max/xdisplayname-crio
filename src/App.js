@@ -42,9 +42,9 @@ export default function App() {
         </div>
         <button type="submit">Submit</button>
       </form>
-      <div className="display">
+    
         {display ? <p>Full Name: {display}</p> : ""}
-      </div>
+     
     </div>
   );
 }
